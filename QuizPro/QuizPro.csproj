@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8b9580db-82b2-4b7e-ade4-489c8befb527</UserSecretsId>
+    
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +17,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuizPro.DAL.Interfaces\QuizPro.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\QuizPro.DAL\QuizPro.DAL.csproj" />
   </ItemGroup>
 
 </Project>

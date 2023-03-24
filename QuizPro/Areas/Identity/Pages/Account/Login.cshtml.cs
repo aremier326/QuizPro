@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using QuizPro.Areas.Identity.Data;
+using QuizPro.DAL.Interfaces.Entities.Identity;
 
 namespace QuizPro.Areas.Identity.Pages.Account
 {

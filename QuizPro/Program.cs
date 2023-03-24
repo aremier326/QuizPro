@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using QuizPro.Areas.Identity.Data;
-using QuizPro.Data;
+using QuizPro.DAL.Data;
+using QuizPro.DAL.Interfaces.Entities.Identity;
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("QuizProContextConnection") ?? throw new InvalidOperationException("Connection string 'QuizProContextConnection' not found.");
+
+//var connectionString = builder.Configuration.GetConnectionString("LocalDBConnectionString") ?? throw new InvalidOperationException("Connection string 'LocalDBConnectionString' not found.");
+
+var connectionString = builder.Configuration.GetConnectionString("Default");
 
 builder.Services.AddDbContext<QuizProContext>(options =>
     options.UseSqlServer(connectionString));
@@ -35,5 +38,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
